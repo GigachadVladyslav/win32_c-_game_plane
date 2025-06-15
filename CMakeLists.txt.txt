@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+project(PlaneGame WIN32)
+
+set(CMAKE_CXX_STANDARD 17)
+set(SOURCES src/main.cpp)
+
+add_executable(PlaneGame WIN32 ${SOURCES})
+
+# Link required Windows libraries
+target_link_libraries(PlaneGame gdiplus comctl32)
+
+# Optionally, copy assets to the build directory after build
+add_custom_command(TARGET PlaneGame POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:PlaneGame>/assets
+)

@@ -4,11 +4,10 @@
 #include <ctime>
 #include <commctrl.h>
 #include <gdiplus.h>
-#include "resource.h"
 #include <uxtheme.h>
 #pragma comment(lib, "gdiplus.lib")
 #pragma comment(lib, "comctl32.lib")
-#pragma comment(lib, "uxtheme.lib")
+
 
 using namespace Gdiplus;
 
@@ -16,7 +15,7 @@ using namespace Gdiplus;
 const int SCREEN_WIDTH = 689;
 const int SCREEN_HEIGHT = 760;
 const int PLANE_WIDTH = 100;
-const int PLANE_HEIGHT = 85;
+const int PLANE_HEIGHT = 85;                                 
 const int BOMB_WIDTH = 40;
 const int BOMB_HEIGHT = 50;
 const int GROUND_LEVEL = SCREEN_HEIGHT - 50;
@@ -98,8 +97,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     wc.lpszClassName = CLASS_NAME;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-    wc.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MYICON));
-    wc.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_MYICON));
 
 
     RegisterClass(&wc);
